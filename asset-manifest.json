@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/vesper_tool/static/css/main.929dcf73.css",
+    "main.js": "/vesper_tool/static/js/main.594a06d6.js",
+    "static/media/negative.wav": "/vesper_tool/static/media/negative.505c33c63f06d1e041b2.wav",
+    "static/media/positive.wav": "/vesper_tool/static/media/positive.0ff4ea852b22ca6a0714.wav",
+    "index.html": "/vesper_tool/index.html",
+    "main.929dcf73.css.map": "/vesper_tool/static/css/main.929dcf73.css.map",
+    "main.594a06d6.js.map": "/vesper_tool/static/js/main.594a06d6.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.929dcf73.css",
+    "static/js/main.594a06d6.js"
+  ]
+}
