@@ -4,7 +4,7 @@ import s from './index.module.scss';
 
 const Alert: IFC<{ children?: React.ReactNode }> = ({ children }) => {
   const deleteKeywords = Object.keys(deleteNameSpaces).join(' ');
-  const reseKeywords = Object.keys(resetNameSpaces).join(' ');
+  const resetKeywords = Object.keys(resetNameSpaces).join(' ');
 
   return (
     <div className={s.alert}>
@@ -27,7 +27,7 @@ const Alert: IFC<{ children?: React.ReactNode }> = ({ children }) => {
       </div>
       <div className={s.row}>
         <h6 className={s.title}>Сброс записей</h6>
-        {reseKeywords}
+        {resetKeywords}
       </div>
     </div>
   );
