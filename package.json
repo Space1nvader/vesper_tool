@@ -1,7 +1,7 @@
 {
   "name": "vesper_host_tool",
   "version": "0.1.0",
-  "homepage": "/",
+  "homepage": "https://space1nvader.github.io/vesper_tool/",
   "private": true,
   "dependencies": {
     "@redux-devtools/extension": "^3.2.5",
@@ -22,6 +22,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "deploy": "gh-pages -d build",
     "eject": "react-scripts eject"
   },
   "browserslist": {
