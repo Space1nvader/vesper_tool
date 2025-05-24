@@ -1,0 +1,61 @@
+body {
+  padding: 2rem;
+  max-height: 100vh;
+  height: 100vh;
+  box-sizing: border-box;
+}
+.control {
+  border-radius: 10px;
+  padding: 1rem;
+  border: 2px solid #fff;
+  color: #fff;
+  font-weight: bold;
+  transition: all 0.3s;
+  font-size: 1.4rem;
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+.index {
+  color: #9a9a9a;
+  font-size: 2rem;
+}
+
+.element {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.listener {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-height: 100vh;
+  overflow: hidden;
+  height: 100%;
+}
+
+.list {
+  padding: 2rem 0;
+  margin-bottom: 2rem;
+  box-sizing: border-box;
+  overflow: auto;
+  max-height: 88vh;
+  height: 88vh;
+}
+
+.info {
+  position: absolute;
+  top: 0;
+  right: 2rem;
+  transition: all 0.3s;
+
+  &:hover {
+    opacity: 0.7;
+  }
+  & svg {
+    width: 4rem;
+    fill: #fff;
+  }
+}

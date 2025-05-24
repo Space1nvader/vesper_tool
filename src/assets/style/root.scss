@@ -1,0 +1,17 @@
+@import './theme/dark.scss';
+@import './theme/light.scss';
+@import './palette.scss';
+@import './keyframes.scss';
+@import './fonts.scss';
+
+:root {
+  --color-accent: var(--blue-40);
+  --text-primary: #fff;
+  --text-secondary: rgba(255, 255, 255, 0.7);
+  --background-primary: #121212;
+  --background-secondary: #262626;
+  --divider-color: rgba(255, 255, 255, 0.12);
+  --border-color: transparent;
+  --border-color-focus: var(--gray-30);
+  --border-color-hover: rgba(152, 152, 152, 0.488);
+}
