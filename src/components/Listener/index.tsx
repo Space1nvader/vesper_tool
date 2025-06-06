@@ -14,6 +14,7 @@ const Listener = () => {
   const [isListening, setIsListening] = useState<0 | 1>(0);
   const [isAlertVisible, setAlertVisible] = useState([false, '']);
   const [list, setList] = useState<string[]>([]);
+  const animateRef = useRef<HTMLDivElement>(null);
   const positiveAudioRef = useRef<HTMLAudioElement>(null);
   const negativeAudioRef = useRef<HTMLAudioElement>(null);
 
@@ -56,7 +57,6 @@ const Listener = () => {
   };
 
   const addNewElement = (value: string) => {
-    // console.log('positiveAudio', positiveAudio);
     if (positiveAudioRef?.current) {
       positiveAudioRef.current.play();
     }
@@ -97,6 +97,7 @@ const Listener = () => {
 
       return;
     }
+
     setAlertVisible([true, command + value]);
   };
 
@@ -104,8 +105,11 @@ const Listener = () => {
     const { transcript } = event.results[0][0];
 
     if (transcript.length) {
-      const command = transcript.split(' ')[0].toLocaleLowerCase();
-      const value = transcript.substring(transcript.indexOf(' ') + 1);
+      // тут короч ток пиши пока ищет надо добавить другие
+      const commandIndexStart = transcript.indexOf('пиши');
+      const commandText = transcript.slice(commandIndexStart);
+      const command = commandText.split(' ')[0].toLocaleLowerCase();
+      const value = commandText.substring(commandText.indexOf(' ') + 1);
 
       executeCommand(command, value);
     }
@@ -125,8 +129,15 @@ const Listener = () => {
         ))}
 
         {isListening && (
-          <div className={s.element} style={{ fontSize: '2rem' }}>
-            Listening...
+          <div className={s.placeholder}>
+            <div className={s.interactive}>
+              <div ref={animateRef} className={s.animate} />
+            </div>
+            <div className={s.element} style={{ fontSize: '2rem', marginBottom: 0 }}>
+              Listening...
+            </div>
+            <div style={{ width: '100%' }} />
+            {isAlertVisible[1]}
           </div>
         )}
       </div>
@@ -140,7 +151,7 @@ const Listener = () => {
       >
         <InfoIcon />
       </button>
-      {isAlertVisible && <Alert>{isAlertVisible[1]}</Alert>}
+      {isAlertVisible[0] && <Alert>{isAlertVisible[1]}</Alert>}
     </div>
   );
 };

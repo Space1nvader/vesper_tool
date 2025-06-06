@@ -2,20 +2,15 @@ import React from 'react';
 import { deleteNameSpaces, resetNameSpaces } from 'components/Listener';
 import s from './index.module.scss';
 
-const Alert: IFC<{ children?: React.ReactNode }> = ({ children }) => {
+const Alert: IFC<{ children?: React.ReactNode }> = () => {
   const deleteKeywords = Object.keys(deleteNameSpaces).join(' ');
   const resetKeywords = Object.keys(resetNameSpaces).join(' ');
 
   return (
     <div className={s.alert}>
-      {children && (
-        <div style={{ marginBottom: '2rem' }}>
-          <h4 className={s.title} style={{ color: 'red' }}>
-            Кажется, что нихуя не понятно, вы сказали:
-          </h4>
-          <div className={s.row}>{children}</div>
-        </div>
-      )}
+      что бы работал звук надо мышкой кликнуть в любое место на сайте
+      <br />
+      <br />
       <div className={s.row}>
         <h6 className={s.title}>Добавление записи:</h6>
         Любые однокоренные слова с &#34;пиши &#34;(например, &#34;напиши&#34; или
